@@ -34,15 +34,44 @@ public class UserStory {
    return book;
  }
 
+  /*
+  *calculates the total amount of ratings for the average method
+  */
+  
+  public double TotalRating(){
+    double totalRating = 0.0;
+
+     for (int i = 0; i < rating.length; i++) {
+      double total = rating[i];
+       if (total >= 0) {
+        totalRating += total;
+      }
+    }
+    
+    return totalRating;
+  }
+
+/*
+*uses the TotalRating method and divides by the ratings length
+*/
+  
+  public double AverageRating(){
+   if (rating.length == 0) {
+      return 0;
+    }
+    
+    double average = TotalRating();
+    return average / rating.length;
+  }
+
   /* 
   *Displays each index(title, author, and rating)
   */
 
   public String toString() {
-    String result = "";
-    for (int i = 0; i < title.length; i++) {
-      result += "Title: " + title[i] + "  Author: " + author[i] + "  Rating: " + rating[i];
-      result += "\n";
+    String result = "Suggested books are: " + "\n" + "\n";
+    for(String book : title){
+       result += book + "\n";
     }
     return result;
   }

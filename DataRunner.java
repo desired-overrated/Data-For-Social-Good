@@ -17,6 +17,16 @@ public class DataRunner {
       *calls the minRating mathod
       */
     System.out.println(op.MinRating("title.txt", "rating.txt"));
+
+    /*
+    *Calls the TotalRating method
+      */
+     op.TotalRating();
+
+    /*
+      *calls the AverageRating method
+      */
+    System.out.println("Average rating of suggested books " + op.AverageRating());
     
 
     
